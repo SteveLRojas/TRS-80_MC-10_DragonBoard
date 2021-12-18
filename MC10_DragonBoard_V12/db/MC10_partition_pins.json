@@ -1,0 +1,201 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "TAPE_OUT",
+					"strict" : false
+				},
+				{
+					"name" : "LED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "R[0]",
+					"strict" : false
+				},
+				{
+					"name" : "R[1]",
+					"strict" : false
+				},
+				{
+					"name" : "G[0]",
+					"strict" : false
+				},
+				{
+					"name" : "G[1]",
+					"strict" : false
+				},
+				{
+					"name" : "B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HSYNC",
+					"strict" : false
+				},
+				{
+					"name" : "VSYNC",
+					"strict" : false
+				},
+				{
+					"name" : "audio",
+					"strict" : false
+				},
+				{
+					"name" : "ps2_clk_q",
+					"strict" : false
+				},
+				{
+					"name" : "ps2_data_q",
+					"strict" : false
+				},
+				{
+					"name" : "TXD",
+					"strict" : false
+				},
+				{
+					"name" : "CP2102_TXD",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_WREn",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_CASn",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_RASn",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_A[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_A[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_A[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_A[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_A[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_A[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_A[8]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_A[10]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_DQM",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_DQ[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_DQ[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_DQ[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_DQ[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_DQ[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_DQ[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_DQ[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SDRAM_DQ[7]",
+					"strict" : false
+				},
+				{
+					"name" : "TAPE_IN",
+					"strict" : false
+				},
+				{
+					"name" : "button[3]",
+					"strict" : false
+				},
+				{
+					"name" : "RST",
+					"strict" : false
+				},
+				{
+					"name" : "button[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ps2_clk_d",
+					"strict" : false
+				},
+				{
+					"name" : "ps2_data_d",
+					"strict" : false
+				},
+				{
+					"name" : "button[2]",
+					"strict" : false
+				},
+				{
+					"name" : "button[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

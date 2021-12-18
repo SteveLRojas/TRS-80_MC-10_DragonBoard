@@ -1,0 +1,97 @@
+rev 109
+New Quartus project created and old one deleted.
+All leftover files from ECE385 removed.
+Testbench set up to simulate CLOADM command.
+
+Revision 110
+New Quartus (version 10.0) project created and old one archived.
+Optimized MULTIPLEXED_HEX_DRIVER.
+Created MC6847_gen3 to replace MC6847_gen2.
+	The MC6847_gen3 module provides the same functionality as the gen2 module with less resource usage.
+Added synchronizers on PS/2 keyboard lines.
+Main 50MHz clock is now derived from a PLL.
+10MHz clock eliminated.
+Created SDC file with constraints.
+Set IO standard and current strength assignments.
+
+Revision 111
+Fixed bug in CPU core (Stack pointer should not be affected by reset).
+Removed reset logic from MEM_128_8.
+MEM_128_8 is now synchronous.
+	After removing the reset logic and making the memory synchronous MEM_128_8 infers block ram.
+Added ramstyle = "logic" synthesis attribute to MEM_128_8 (There are no free M9K blocks).
+Replaced the MCM character ROM with one that more closely resembles the MC6847 ROM.
+	The new ROM is smaller and uses one fewer M9K block.
+Removed the ramstyle = "logic" attribute from MEM_128_8 (Using the last available M9K block).
+
+Revision 112
+Optimized MULTIPLEXED_HEX_DRIVER.
+Optimized memory subsystem.
+Simplified bus_arbiter_gen2.
+Created SDRAM_controller and SDRAM assignments.
+	A separate project will be created to debug the SDRAM controller.
+Fixed SDRAM controller and replaced previous memory system.
+
+Revision 113
+Cleaned up top level.
+Removed old project files.
+Split 6801_core into multiple files and modules.
+Created the following files:
+	6801_types.sv
+	6801_address_bus_multiplexer.sv
+	6801_data_bus_output.sv
+	6801_ALU.sv
+	6801_state_sequencer.sv
+	6801_program_counter.sv
+	6801_effective_address.sv
+	6801_accumulators.sv
+	6801_multiplexers.sv
+	6801_mem_ctrl.sv
+Note: some files contain more than one module.
+This revision should be functionally identical to the previous one.
+
+Revision 114B
+New Quartus project created for custom development board (DragonBoard V1.0).
+Modified top level IO for new board.
+Removed all code related to hex displays (the new board has none).
+Modified memory controller for 8-bit SDRAM.
+
+Notes:
+	Discovered hardware bug in DragonBoard: SDRAM clock is not connected to a dedicated clock output.
+
+TODO:
+	Previous board was limited to 8 colors, the new board has 64. The video controller should be modified to use the new color capabilities.
+	Implement the serial port.
+	The previous board was not able to send data to the ps/2 keyboard, however the new board can. This should be used to set the keyboard indicator LEDs.
+	NUM lock is always enabled, now that the indicators can be used, the behavior of the number pad keys should be changed when NUM lock is turned off.
+
+Revision 115B
+Removed old ps/2 modules and replaced them with new ones from the CoCo project.
+Added logic to control the keyboard indicators.
+Changed the functionality of some of the buttons and LEDs on the board.
+Modified display controller to implement all colors.
+Mapped escape key to break key.
+Fixed tab key mapping.
+
+TODO:
+	Implement Num lock.
+	Implement serial port.
+	Fix left Control and Alt keys.
+Note:
+	The serial port of the TRS-80 is too slow to connect to a modern PC. It may be necessary to convert the baud rate up to 1200.
+
+Revision 116B
+Added UART module for debugging the keyboard controller.
+Changed LED functionality for keyboard debugging.
+Fixed bug in keyboard controller. The left control and alt keys now work.
+Fixed address width of the display controller.
+
+Notes:
+	Discovered hardware bug in DragonBoard: SP232 chip does not operate at 3.3v, making the serial port unusable. The SP232 atasheet from HG Semi claims that the chip operates down to 2v, but this is simply not true. 2.4v is required to receive, and 4.5v is required for transmitting.
+	RS-232 over USB using the CP2102 works fine.
+
+Revision 117C
+Created new Quartus project (18.1).
+Set pin assignments for DragonBoard version 1.2 (not compatible with previous DragonBoard versions).
+Fixed minor bug in PS2 host module that caused ps2_data_q to be set at system startup.
+Created printer module that converts baud rate to 115200. Note that the measured baud rate of the TRS-80 was 714 rathen than the expected 600.

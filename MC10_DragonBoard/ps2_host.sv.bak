@@ -1,0 +1,39 @@
+module ps2_host(
+		input logic clk,
+		input logic rst,
+		input logic ps2_clk,
+		input logic ps2_data,
+		output logic [7:0] rx_data,
+		output logic ready);
+  
+logic prev_ps2_clk;
+logic ps2_clk_s, ps2_data_s;
+logic [11:0] shift_reg;
+initial
+begin
+	shift_reg = 12'b100000000000;
+	rx_data = 8'h00;
+	ready = 1'b0;
+end
+always @(posedge clk)
+begin
+	ps2_clk_s <= ps2_clk;
+	ps2_data_s <= ps2_data;
+	prev_ps2_clk <= ps2_clk_s;
+	if(rst)
+	begin
+		shift_reg <= 12'b100000000000;
+		rx_data <= 8'h00;
+		ready <= 1'b0;
+	end
+	else if(ready)
+	begin
+		shift_reg <= 12'b100000000000;
+	end
+	else if(prev_ps2_clk & (~ps2_clk_s))
+		shift_reg <= {ps2_data_s, shift_reg[11:1]};
+	if(shift_reg[0])	//last bit received
+		rx_data <= shift_reg[9:2];
+	ready <= shift_reg[0];
+end
+endmodule

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Dec 15 20:07:55 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : MC10
+Top-level Entity Name : MC10
+Family : Cyclone IV E
+Total logic elements : 2,128
+    Total combinational functions : 2,008
+    Dedicated logic registers : 627
+Total registers : 627
+Total pins : 55
+Total virtual pins : 0
+Total memory bits : 74,752
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1
